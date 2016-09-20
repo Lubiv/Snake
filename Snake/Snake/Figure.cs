@@ -15,15 +15,15 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	public class VerticalLine  : Figure
+	public class Figure
 	{
-		public VerticalLine (int yUp, int yDown, int x, char sym)
+		protected List<Point> pList;
+
+		public void Draw()
 		{
-			pList = new List<Point>();
-			for (int y = yUp; y <= yDown; y++) 
+			foreach (Point p in pList)
 			{
-				Point p = new Point(x, y, sym);
-				pList.Add(p);
+				p.Draw();
 			}
 		}
 	}
