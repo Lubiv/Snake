@@ -15,27 +15,26 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	public class Point
+	public class HorizontalLine
 	{
-		public int x;
-		public int y;
-		public char sym;
+		List<Point> pList;
 
-		public Point()
+		public HorizontalLine (int xLeft, int xRight, int y, char sym)
 		{
-		}
-
-		public Point(int _x, int _y, char _sym)
-		{
-			x = _x;
-			y = _y;
-			sym = _sym;
+			pList = new List<Point>();
+			for (int x = xLeft; x <= xRight; x++)
+			{
+				Point p = new Point(x, y, sym);
+				pList.Add(p);
+			}
 		}
 
 		public void Draw()
 		{
-			Console.SetCursorPosition (x, y);
-			Console.Write (sym);
+			foreach (Point p in pList)
+			{
+				p.Draw();
+			}
 		}
 	}
 }

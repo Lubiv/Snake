@@ -15,28 +15,28 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	public class Point
+	public class VerticalLine
 	{
-		public int x;
-		public int y;
-		public char sym;
+		List<Point> pList;
 
-		public Point()
+		public VerticalLine (int yUp, int yDown, int x, char sym)
 		{
-		}
-
-		public Point(int _x, int _y, char _sym)
-		{
-			x = _x;
-			y = _y;
-			sym = _sym;
+			pList = new List<Point>();
+			for (int y = yUp; y <= yDown; y++) 
+			{
+				Point p = new Point(x, y, sym);
+				pList.Add(p);
+			}
 		}
 
 		public void Draw()
 		{
-			Console.SetCursorPosition (x, y);
-			Console.Write (sym);
+			foreach(Point p in pList)
+			{
+				p.Draw();
+			}
 		}
+
 	}
 }
 

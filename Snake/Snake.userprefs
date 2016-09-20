@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Snake\Main.cs">
     <Files>
-      <File FileName="Snake\Main.cs" Line="17" Column="21" />
+      <File FileName="Snake\Main.cs" Line="78" Column="4" />
       <File FileName="Snake\Point.cs" Line="27" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>

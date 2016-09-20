@@ -16,55 +16,18 @@ namespace Snake
 			Point p2 = new Point (4, 5, '#');
 			p2.Draw ();
 
-			List<int> numList = new List<int>();
-			numList.Add (0);
-			numList.Add (1);
-			numList.Add (2);
+			HorizontalLine hline = new HorizontalLine (5, 10, 8, '+');
+			hline.Draw ();
 
-			int x = numList [0];
-			int y = numList [1];
-			int z = numList [2];
-
-			foreach (int i in numList) {
-				Console.WriteLine(i);
-			}
-
-			numList.RemoveAt (1);
-
-			List<Point> pList = new List<Point> ();
-			pList.Add (p1);
-			pList.Add (p2);
+			VerticalLine vline = new VerticalLine (9, 14, 11, '+');
+			vline.Draw ();
 
 
+			HorizontalLine hsline = new HorizontalLine (5, 10, 15, '+');
+			hsline.Draw ();
 
-
-
-
-
-			List<char> chList = new List<Char> ();
-			chList.Add ('$');
-			chList.Add ('%');
-			chList.Add ('&');
-			chList.Add ('^');
-			
-			Point mp1 = new Point (1, 5, chList[0]);
-			
-			Point mp2 = new Point (3, 8, chList[1]);
-			
-			Point mp3 = new Point (2, 2, chList[2]);
-			
-			Point mp4 = new Point (2, 8, chList[3]);
-
-
-			List<Point> mpList = new List<Point> ();
-			mpList.Add (mp1);
-			mpList.Add (mp2);
-			mpList.Add (mp3);
-			mpList.Add (mp4);
-
-			foreach (Point i in mpList) {
-				i.Draw ();
-			}
+			VerticalLine vsline = new VerticalLine (9, 14, 4, '+');
+			vsline.Draw ();
 
 			Console.ReadLine ();
 		}
