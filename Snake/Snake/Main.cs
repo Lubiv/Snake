@@ -29,6 +29,11 @@ namespace Snake
 			VerticalLine vsline = new VerticalLine (9, 14, 4, '+');
 			vsline.Draw ();
 
+
+			Point p = new Point (6, 13, '*');
+			Snake snake = new Snake (p, 4, Direction.RIGHT);
+			snake.Draw ();
+
 			Console.ReadLine ();
 		}
 
