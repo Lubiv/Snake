@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Snake
 {
@@ -33,6 +34,58 @@ namespace Snake
 			Point p = new Point (6, 13, '*');
 			Snake snake = new Snake (p, 4, Direction.RIGHT);
 			snake.Draw ();
+
+
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+			Thread.Sleep (100);
+			snake.Move ();
+
 
 			Console.ReadLine ();
 		}
