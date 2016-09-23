@@ -32,64 +32,20 @@ namespace Snake
 
 
 			Point p = new Point (6, 13, '*');
-			Snake snake = new Snake (p, 4, Direction.RIGHT);
+			Snake snake = new Snake (p, 20, Direction.RIGHT);
 			snake.Draw ();
 
+			while (true) {
 
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-			Thread.Sleep (100);
-			snake.Move ();
-
-
-			Console.ReadLine ();
-		}
-
+				if(Console.KeyAvailable)
+				{
+					ConsoleKeyInfo key = Console.ReadKey ();
+					snake.HandleKey (key.Key);
+				}
+				Thread.Sleep (100);
+				snake.Move ();
+			}
+		}		
 	}
 
 }
