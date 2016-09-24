@@ -11,39 +11,46 @@ namespace Snake
 	{
 		public static void Main (string[] args)
 		{
-			Point p1 = new Point (1, 2, '*');
-			p1.Draw ();
+			Console.SetWindowSize (1, 1);
+			Console.SetBufferSize (80, 25);
+			Console.SetWindowSize (80, 25);
 
-			Point p2 = new Point (4, 5, '#');
-			p2.Draw ();
-
-			HorizontalLine hline = new HorizontalLine (5, 10, 8, '+');
+			HorizontalLine hline = new HorizontalLine (0, 78, 0, '#');
+			VerticalLine vline = new VerticalLine (1, 24, 0, '#');
+			HorizontalLine hsline = new HorizontalLine (1, 78, 24, '#');
+			VerticalLine vsline = new VerticalLine (1, 24, 78, '#');
 			hline.Draw ();
-
-			VerticalLine vline = new VerticalLine (9, 14, 11, '+');
 			vline.Draw ();
-
-
-			HorizontalLine hsline = new HorizontalLine (5, 10, 15, '+');
 			hsline.Draw ();
-
-			VerticalLine vsline = new VerticalLine (9, 14, 4, '+');
 			vsline.Draw ();
 
 
 			Point p = new Point (6, 13, '*');
-			Snake snake = new Snake (p, 20, Direction.RIGHT);
+			Snake snake = new Snake (p, 4, Direction.RIGHT);
 			snake.Draw ();
 
+			FoodCreator foodCreator = new FoodCreator (80, 25, '$');
+			Point food = foodCreator.CreateFood ();
+			food.Draw ();
+
 			while (true) {
+
+				if(snake.Eat(food))
+				{
+					food = foodCreator.CreateFood ();
+					food.Draw ();
+				}else
+				{
+					snake.Move ();
+				}
+
+				Thread.Sleep (100);
 
 				if(Console.KeyAvailable)
 				{
 					ConsoleKeyInfo key = Console.ReadKey ();
 					snake.HandleKey (key.Key);
 				}
-				Thread.Sleep (100);
-				snake.Move ();
 			}
 		}		
 	}
