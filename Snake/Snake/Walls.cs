@@ -15,36 +15,42 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	public class Figure
+	public class Walls
 	{
-		protected List<Point> pList;
+		List<Figure> wallList;
 
-		public void Draw()
+		public Walls (int mapWigth, int mapHeight)
 		{
-			foreach (Point p in pList)
-			{
-				p.Draw();
-			}
+			wallList = new List<Figure> ();
+
+			HorizontalLine upLine = new HorizontalLine (0, mapWigth - 2, 0, '#');
+			HorizontalLine downLine = new HorizontalLine (0, mapWigth - 2, mapHeight - 1, '#');
+			VerticalLine leftLine = new VerticalLine (1, mapHeight - 2, 0, '#');
+			VerticalLine rightLine = new VerticalLine (1, mapHeight - 2, mapWigth - 2, '#');
+			wallList.Add (upLine);
+			wallList.Add (downLine);
+			wallList.Add (leftLine);
+			wallList.Add (rightLine);
 		}
 
-		internal bool IsHit(Figure figure)
+		internal bool IsHit (Figure figure)
 		{
-			foreach (var p in pList)
+			foreach (var wall in wallList)
 			{
-				if(figure.IsHit( p ))
+				if(wall.IsHit(figure))
+				{
 					return true;
+				}
 			}
 			return false;
 		}
 
-		internal bool IsHit(Point point)
+		public void Draw ()
 		{
-			foreach (var p in pList)
+			foreach (var wall in wallList)
 			{
-				if(p.IsHit( point ))
-					return true;
+				wall.Draw();
 			}
-			return false;
 		}
 	}
 }
